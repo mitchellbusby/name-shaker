@@ -22,7 +22,7 @@ class IndexComponent extends Component {
     }
     this.toggleStart = this.toggleStart.bind(this);
   }
-  
+
   render() {
     let { started, status, totalShake, name, firstTime } = this.state;
 
@@ -46,7 +46,7 @@ class IndexComponent extends Component {
     this.setState({started : !this.state.started});
     if (!started) {
       shake.start();
-      this.setState({status: "Shake! Press stop to generate name."});
+      this.setState({status: "Shake! Press stop to generate name.", name: null});
     } else {
       shake.stop();
       //generate a random name
