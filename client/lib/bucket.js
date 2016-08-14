@@ -1,5 +1,5 @@
 let bucket = (sigmaDelta) => {
-  if (sigmaDelta > 200) {
+  if (sigmaDelta > 500) {
     return 4;
   }
   if (sigmaDelta > 300) {
