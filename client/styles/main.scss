@@ -1,0 +1,28 @@
+@import 'normalize';
+@import 'skeleton';
+
+$background: white;
+
+body {
+  background: $background;
+  font-family: -apple-system,"BlinkMacSystemFont", "Helvetica Neue", serif;
+  text-align: center;
+}
+
+button.main-control {
+  text-align: center;
+}
+
+h1 {
+  margin-top: 1em;
+}
+h2 {
+  margin-top: 1em;
+}
+h3 {
+  margin: 1em auto;
+  padding: .5em;
+  width: 300px;
+  border-radius: 5px;
+  border: 1px solid grey;
+}
