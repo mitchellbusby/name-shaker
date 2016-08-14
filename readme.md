@@ -1,9 +1,8 @@
 #Name Shaker
 
+A little web application I wrote to support a subject I'm doing on physical interaction design at uni. The eccentricity of the name that is generated is defined by how much you shake your phone. The data backing it is from the US Social Security branch, 2011.  
 
-Based on [https://github.com/srn/react-webpack-boilerplate](react-webpack-boilerplate).
-
-Name Shaker uses React and a modified version of alexgibson's shake.js
+Based on (https://github.com/srn/react-webpack-boilerplate)[react-webpack-boilerplate]. Name Shaker uses React and a modified version of alexgibson's shake.js.
 
 #Install
 

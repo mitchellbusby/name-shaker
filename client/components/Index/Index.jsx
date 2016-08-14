@@ -32,7 +32,7 @@ class IndexComponent extends Component {
 
     return (
       <div>
-        <h1>Name Shaker 1.0</h1>
+        <h1>Name Shaker 1.0.1</h1>
         <h2>{status}</h2>
         <StartStopButton started={started} firstTime={firstTime} onToggle={ this.toggleStart } />
         { name ? <h3>{name}</h3> : null }
