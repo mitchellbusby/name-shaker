@@ -3,9 +3,20 @@ import React, { Component, PropTypes } from 'react';
 class StartStopButton extends Component {
   render() {
 
-    let { started, onToggle } = this.props;
+    let { started, firstTime, onToggle } = this.props;
 
-    let button_text = started ? "Stop" : "Start";
+    let button_text;
+
+    if (!started && firstTime) {
+      button_text = "Start";
+    }
+    else if (!started && !firstTime) {
+      button_text = "Try again";
+    }
+    else {
+      button_text = "Stop";
+    }
+
     return (
       <button className={'main-control button-primary'} onClick={onToggle}>{button_text}</button>
     )
@@ -14,6 +25,7 @@ class StartStopButton extends Component {
 
 StartStopButton.propTypes = {
   started: PropTypes.bool,
+  firstTime: PropTypes.bool,
   onToggle: PropTypes.func,
 }
 
