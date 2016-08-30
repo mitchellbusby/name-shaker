@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import Vibrate from '../../lib/vibrate';
+
 const Shake = require('../../lib/shake.js');
 const Bucket = require('../../lib/bucket.js');
 const Names = require('../../lib/names.js');
@@ -61,15 +63,18 @@ class IndexComponent extends Component {
   }
 
   handleShake(ev, sigmaDelta) {
-    let { totalShake } = this.state;
+    let { totalShake, currentBucket } = this.state;
     let newTotalShake = totalShake + sigmaDelta;
     this.setState({totalShake: newTotalShake});
     let bucketValue = Bucket.bucket(newTotalShake);
-    let status = Bucket.bucket_qualitative(bucketValue);
-    this.setState({
-      status: status,
-      currentBucket: bucketValue
-    });
+    if (bucketValue !== currentBucket) {
+      let status = Bucket.bucket_qualitative(bucketValue);
+      this.setState({
+        status: status,
+        currentBucket: bucketValue
+      });
+      Vibrate(bucketValue);
+    }
   }
 }
 
