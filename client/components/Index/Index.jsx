@@ -32,11 +32,14 @@ class IndexComponent extends Component {
 
     let prompt;
 
-    if (!status) {
-      prompt = 'Press start and shake to generate a name.';
+    if (!started && firstTime) {
+      prompt = 'Tap start and shake to generate a name!';
+    }
+    else if (!started) {
+      prompt = 'Tap try again and shake to generate a name!';
     }
     else {
-      prompt = 'Shake! Press stop to generate name.';
+      prompt = 'Shake now! Tap stop to generate name.';
     }
 
     return (
