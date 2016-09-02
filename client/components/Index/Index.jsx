@@ -22,23 +22,31 @@ class IndexComponent extends Component {
       currentBucket: 1,
       name: null,
     }
+
     this.toggleStart = this.toggleStart.bind(this);
+
   }
 
   render() {
     let { started, status, totalShake, name, firstTime } = this.state;
 
+    let prompt;
+
     if (!status) {
-      status = "Press start and shake to generate a name.";
+      prompt = 'Press start and shake to generate a name.';
+    }
+    else {
+      prompt = 'Shake! Press stop to generate name.';
     }
 
     return (
       <div>
         <h1>Name Shaker 1.0.1</h1>
-        <h2>{status}</h2>
+        <h2>{prompt}</h2>
         <StartStopButton started={started} firstTime={firstTime} onToggle={ this.toggleStart } />
         { name ? <h3>{name}</h3> : null }
-         <p>Delta: {totalShake}</p>
+        { started ? <h3>{status}</h3> : null }
+         <p>Eccentricity: {Math.floor(totalShake)}</p>
       </div>
     )
   }
@@ -48,7 +56,7 @@ class IndexComponent extends Component {
     this.setState({started : !this.state.started});
     if (!started) {
       shake.start();
-      this.setState({status: "Shake! Press stop to generate name.", name: null});
+      this.setState({status: "Very common", name: null});
     } else {
       shake.stop();
       //generate a random name

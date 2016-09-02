@@ -25,6 +25,12 @@ Included is a Procfile to run this on a Heroku instance - make sure you enable d
 
 To run in production mode, set the NODE_ENV environment variable to 'production'.
 
+```
+$ npm run dist
+
+$ NODE_ENV=production npm start
+```
+
 #Compatibility
 
 This makes use of the HTML5 `devicemotion` API, so you'll need a device that has a capable browser and accelerometer.
