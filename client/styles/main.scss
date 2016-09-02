@@ -20,9 +20,12 @@ h2 {
   margin-top: 1em;
 }
 h3 {
-  margin: 1em auto;
-  padding: .5em;
-  width: 250px;
-  border-radius: 5px;
-  border: 1px solid grey;
+  margin-top: 1em;
+  &.status {
+    margin: 1em auto;
+    padding: .5em;
+    width: 250px;
+    border-radius: 5px;
+    border: 1px solid grey;
+  }
 }

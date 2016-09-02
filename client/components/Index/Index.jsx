@@ -33,22 +33,22 @@ class IndexComponent extends Component {
     let prompt;
 
     if (!started && firstTime) {
-      prompt = 'Tap start and shake to generate a name!';
+      prompt = 'Tap start and shake your phone to generate a name!';
     }
     else if (!started) {
-      prompt = 'Tap try again and shake to generate a name!';
+      prompt = 'Tap try again and shake your phone to generate a name!';
     }
     else {
-      prompt = 'Shake now! Tap stop to generate name.';
+      prompt = 'Shake your phone now! Tap stop to generate name.';
     }
 
     return (
       <div>
         <h1>Name Shaker 1.0.1</h1>
-        <h2>{prompt}</h2>
+        <h3>{prompt}</h3>
         <StartStopButton started={started} firstTime={firstTime} onToggle={ this.toggleStart } />
-        { name ? <h3>{name}</h3> : null }
-        { started ? <h3>{status}</h3> : null }
+        { name ? <h3 className={'status'}>{name}</h3> : null }
+        { started ? <h3 className={'status'}>{status}</h3> : null }
          <p>Eccentricity: {Math.floor(totalShake)}</p>
       </div>
     )
