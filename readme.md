@@ -11,13 +11,13 @@ Requirements:
 - node 5+
 - npm (included with NodeJS)
 
-`npm install`
+`$ npm install`
 
 #Development
 
-`npm start`
+`$ npm start`
 
-Open up your browser and go to http://localhost:3001
+Open up your browser and go to [http://localhost:3001](http://localhost:3001)
 
 #Deployment
 
